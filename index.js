@@ -16,8 +16,8 @@ const requestHandler = (req, res) => {
       //sends the content file to the browser
       res.end(html);
     });
-  } else if (req.url.startsWith("/api/timestamp")) {
-    const dateString = req.url.split("/api/timestamp/")[1];
+  } else if (req.url.startsWith("/api/")) {
+    const dateString = req.url.split("/api/")[1];
     let timestamp;
     if (dateString === undefined || dateString.trim() === "") {
       timestamp = getTimestamp(new Date());
