@@ -1,0 +1,16 @@
+{
+  "name": "timestamp-microservice",
+  "version": "1.0.0",
+  "description": "timestamp microservice using a few built-in Node.js modules",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "[\"node.js\"",
+    "\"timestamp\"",
+    "microservice\"\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\"microservice\"]"
+  ],
+  "author": "Jordano",
+  "license": "ISC"
+}
