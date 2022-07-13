@@ -25,17 +25,18 @@ const requestHandler = (req, res) => {
       const date = !isNaN(dateString)
         ? new Date(parseInt(dateString))
         : new Date(dateString);
-    }
-    if (!isNaN(date.getTime())) {
-      timestamp = getTimestamp(date);
-    } else {
-      timestamp = {
-        error: "invalid date",
-      };
-    }
 
-    res.writeHead(200, { "content-Type": "application/json" });
-    res.end(JSON.stringify(timestamp));
+      if (!isNaN(date.getTime())) {
+        timestamp = getTimestamp(date);
+      } else {
+        timestamp = {
+          error: "invalid date",
+        };
+      }
+
+      res.writeHead(200, { "content-Type": "application/json" });
+      res.end(JSON.stringify(timestamp));
+    }
   } else {
     fs.readFile("views/404.html", (err, html) => {
       if (err) throw err;
