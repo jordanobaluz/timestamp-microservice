@@ -10,13 +10,13 @@ const getTimestamp = (date) => ({
 const requestHandler = (req, res) => {
   if (req.url === "/") {
     //read the file provided in the first argument and execute
-    fs.readFile("views/index.html", "utf8", (err, html) => {
+    fs.readFile("views/index.html", (err, html) => {
       if (err) throw err;
-      res.writeHead(200, { "content-Type": "text/html" });
+      res.writeHead(200, { "Content-Type": "text/html" });
       //sends the content file to the browser
       res.end(html);
     });
-  } else if (req.url.startWith("/api/timestamp")) {
+  } else if (req.url.startsWith("/api/timestamp")) {
     const dateString = req.url.split("/api/timestamp/")[1];
     let timestamp;
     if (dateString === undefined || dateString.trim() === "") {
@@ -36,6 +36,12 @@ const requestHandler = (req, res) => {
 
     res.writeHead(200, { "content-Type": "application/json" });
     res.end(JSON.stringify(timestamp));
+  } else {
+    fs.readFile("views/404.html", (err, html) => {
+      if (err) throw err;
+      res.writeHead(404, { "Content-Type": "text/html" });
+      res.end(html);
+    });
   }
 };
 
