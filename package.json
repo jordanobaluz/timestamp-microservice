@@ -12,5 +12,8 @@
     "microservice"
   ],
   "author": "Jordano",
-  "license": "ISC"
+  "license": "ISC",
+  "engines": {
+    "node": "10.9.0"
+  }
 }
